@@ -1,0 +1,38 @@
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
+module.exports = {
+  entry: './src/script.js',
+  output: {
+    filename: '[name].[contenthash].js',
+    path: path.resolve(__dirname, 'dist'),
+    clean: true,
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+    }),
+    new ESLintPlugin({
+      extensions: ['js'],
+      emitWarning: true,
+      emitError: false,
+      failOnError: false,
+    }),
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.html$/i,
+        loader: 'html-loader',
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+      },
+      //   {
+      //     test: /\.(woff|woff2|eot|ttf|otf)$/i,
+      //     type: 'asset/resource',
+      //   },
+    ],
+  },
+};
