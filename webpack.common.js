@@ -12,6 +12,18 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
     }),
+    new HtmlWebpackPlugin({
+      template: './src/pages/login.html',
+      filename: 'login.html',
+    }),
+    // new HtmlWebpackPlugin({
+    //   template: './src/pages/details.html',
+    //   filename: 'login.html',
+    // }),
+    new HtmlWebpackPlugin({
+      template: './src/pages/sign-up.html',
+      filename: 'signup.html',
+    }),
     new ESLintPlugin({
       extensions: ['js'],
       emitWarning: true,
