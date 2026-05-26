@@ -22,7 +22,7 @@ module.exports = {
     // }),
     new HtmlWebpackPlugin({
       template: './src/pages/sign-up.html',
-      filename: 'signup.html',
+      filename: 'sign-up.html',
     }),
     new ESLintPlugin({
       extensions: ['js'],
